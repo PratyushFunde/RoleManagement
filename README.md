@@ -1,4 +1,7 @@
-# Clone the repo to get started
+# User Management System
+
+This project provides functionalities to manage users and roles efficiently with additional special features like search, filter, and dynamic views.
+
 
 
 
@@ -33,29 +36,47 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Functionalities
 
-To add , update or delete particular user:
-    -To add the user click on 'Add User' option. Fill the details and Submit to add the User.
-    -To edit the user click on 'Edit' then Modify the details. Previous details are already shown on the edit window.
-     If you don't want to edit then submmit the previuos details.
-    -To delete the user click on 'Delete' the user will be removed from database.
+### **1. Manage Users**
+- **Add User:**
+  - Click on the **'Add User'** option.
+  - Fill in the user details in the form and submit to add the user.
 
-To add New Roles :
-    - TO add the new role click on 'Add Role'.
-    -Enter the role name and permissions you want to specify for the role.
-    -Role name cannot be repeated, if you try to add the same role name then it will show error message.
+- **Edit User:**
+  - Click on the **'Edit'** button for a specific user.
+  - Modify the details in the edit window (previous details are pre-filled).
+  - If no changes are required, simply submit the existing details.
 
-To modify Existing roles :
-    -To modify the existing role click on 'Edit Roles'.
-    -Select the role from available roles through dropdown.
-    -Add or remove the permissions for the roles and click on 'Save Changes'.
-    -The modifed role permissions will be reset to the every user.
+- **Delete User:**
+  - Click on the **'Delete'** button to remove the user from the database.
 
-Special Features :
-    Search : User can be searched based on username through provided search box.
-    Filter : Users can be filtered based on if their status is Active/Inactive.
-    View   : Based on requirement either table or grid view can be applied by selecting dropdown.
-             For mobile devices Grid view is by default Set to give better experience as table may not be suitable.
+---
 
+### **2. Manage Roles**
+
+#### **Add New Roles**
+- Click on the **'Add Role'** button.
+- Enter a unique role name and specify permissions for the role.
+- If a duplicate role name is entered, an error message will be displayed.
+
+#### **Modify Existing Roles**
+- Click on the **'Edit Roles'** button.
+- Select the role from the available roles in the dropdown.
+- Add or remove permissions as required, then click **'Save Changes'**.
+- Modified permissions will automatically be applied to all users with the updated role.
+
+---
+
+## Special Features
+
+### **1. Search**
+- Users can be searched by their username using the provided search box.
+
+### **2. Filter**
+- Filter users based on their status (Active/Inactive).
+
+### **3. View Options**
+- Choose between **Table View** or **Grid View** using the dropdown.
+- On mobile devices, **Grid View** is set as the default for a better user experience.
 
 ## Video
 Below is the video of final output of the project

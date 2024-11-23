@@ -1,0 +1,124 @@
+
+<app-header></app-header>
+
+<h2>User Dashboard</h2>
+@if(isEdit){
+
+    <div class="edit-container">
+
+    <div class="edit-form">
+    
+    <form #updateForm="ngForm" (ngSubmit)="handleUpdate(updateForm)">
+        <div class="username">
+            <label for="userName">Name : </label>
+            <input type="text" [(ngModel)]="editUser.name" id="userName" name="name" [value]="editUser.name" ngModel>
+        </div>
+    <div class="dropdown">
+        <label for="role">Role:</label>
+        
+        <select id="role" required name="role" [(ngModel)]="editUser.role">
+            <option *ngFor="let role of roles" [value]="role.name" >{{ role.name}}</option>
+        </select>
+    </div>
+    <div>
+        <label for="status">Check the checkbox if yout want to keep user active : </label>
+        <input id="status" type="checkbox"  name="status" [(ngModel)]="editUser.status"/>
+    </div>
+    <button type="submit">Update</button>
+    </form>
+    
+    </div>
+</div>
+    }
+    <div class="filter-container">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search Users" (input)="filterUsers()">
+    <select [(ngModel)]="selectedStatus" (change)="filterUsers()">
+        <option value="">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <select [(ngModel)]="layout" (change)="handleLayoutChange()">
+        <option value="table" selected>Table</option>
+        <option value="grid">Grid</option>
+      </select>
+    </div>
+@if(showTable)
+{
+
+    
+
+<div class="table table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th>Permissions</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let user of filteredUsers">
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.id}}</td>
+
+                <td *ngIf="user.status"><span
+                        class="status active">Active</span></td>
+                <td *ngIf="!user.status"><span
+                        class="status inactive">Inactive</span></td>
+
+                <td>{{user.role}}</td>
+                <td>{{user.permissions}}</td>
+                <td><button class="edit-button"
+                        (click)="onEditClick(user)">Edit</button></td>
+                <td><button class="delete-button"
+                        (click)="deleteUser(user.id)">Delete</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+    @if(isEmpty)
+    {
+        <h2>No Records To Display !</h2>
+    }
+</div>
+}
+
+@if(!showTable){
+    
+<div class="card-container">
+    
+    <div class="user-card" *ngFor="let user of filteredUsers">
+      <div class="card-header">
+        <h3 class="username">{{user.name}}</h3>
+        @if(user.status)
+        {
+
+            <span class="status active">Active</span> <!-- Use "inactive" class for Inactive status -->
+        }
+        @if(!user.status)
+        {
+            <span class="status inactive">Inactive</span> <!-- Use "inactive" class for Inactive status -->
+
+        }
+      </div>
+      <div class="card-body">
+        <p><strong>ID:</strong> {{user.id}}</p>
+        <p><strong>Permissions:</strong></p>
+        <ul class="permissions">
+          <li>{{user.permissions}}</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button class="btn edit-btn" (click)="onEditClick(user)">Edit</button>
+        <button class="btn delete-btn" (click)="deleteUser(user.id)">Delete</button>
+      </div>
+    </div>
+    
+    </div>
+}
+
+

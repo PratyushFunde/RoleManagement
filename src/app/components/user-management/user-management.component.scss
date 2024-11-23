@@ -1,0 +1,503 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #8d87879d;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #413f3f51;
+}
+
+/* Styling for action buttons */
+.edit-button {
+    background-color: #3e3eae; /* Black background */
+    color: white;            /* White text */
+    border: 2px solid white; /* White border */
+    border-radius: 5px;      /* Rounded corners */
+    padding: 8px 16px;       /* Button padding */
+    font-size: 1rem;         /* Font size */
+    cursor: pointer;         /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  }
+  
+  .edit-button:hover {
+    background-color: white; /* White background on hover */
+    color: black;            /* Black text on hover */
+    border-color: black;     /* Black border on hover */
+  }
+  
+  .edit-button:active {
+    background-color: grey;  /* Grey background on click */
+    color: black;            /* Black text on click */
+    border-color: black;     /* Black border on click */
+  }
+  
+  .delete-button {
+    background-color: rgb(235, 105, 105); /* Black background */
+    color: white;            /* White text */
+    border: 2px solid red;   /* Red border for destructive indication */
+    border-radius: 5px;      /* Rounded corners */
+    padding: 8px 16px;       /* Button padding */
+    font-size: 1rem;         /* Font size */
+    cursor: pointer;         /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+  }
+  
+  .delete-button:hover {
+    background-color: red;   /* Red background on hover */
+    color: white;            /* White text on hover */
+    border-color: white;     /* White border on hover */
+  }
+  
+  .delete-button:active {
+    background-color: darkred; /* Dark red background on click */
+    color: white;              /* White text on click */
+    border-color: black;       /* Black border on click */
+  }
+  
+
+.status {
+    font-weight: bold;
+}
+
+.status.active {
+    color: green;
+}
+
+.status.inactive {
+    color: red;
+}
+
+h2{
+    justify-self: center;
+
+    margin-top: 1rem;
+}
+
+.table{
+    // border: 2px dotted red;
+    padding: 1rem;
+}
+
+
+
+.edit-form {
+  background: #656c73; /* White background for the form */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Responsive width */
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between inputs */
+}
+
+.edit-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.edit-form input[type="text"],
+.edit-form select,
+.edit-form input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.edit-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-form button:hover {
+  background-color: #0056b3;
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .edit-form {
+    padding: 15px;
+    width: 90%;
+  }
+}
+
+/* Container styling for input and dropdown */
+.dropdown{
+  display: flex;
+  // gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  input{
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 7px;
+    width: 15rem;
+  }
+  select{
+    margin-right: 1rem;
+  }
+}
+
+/* Dropdown styling */
+select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Optional: Styling for the dropdown options */
+option {
+  font-size: 14px;
+  color: #333;
+}
+
+.filter-container{
+  display: flex;
+  justify-content: space-between;
+  input{
+    margin-left: 1rem;
+    border-radius: 7px;
+    padding: 2px;
+  }
+  select{
+    margin-right: 1rem;
+  }
+}
+/* General layout adjustment for mobile screens */
+@media (max-width: 600px) {
+  div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+h2{
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+  margin: 10px 70px 70px;
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.fl-table td, .fl-table th {
+  text-align: center;
+  padding: 8px;
+}
+
+.fl-table td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 12px;
+}
+
+.fl-table thead th {
+  color: #ffffff;
+  background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+  background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  .fl-table {
+      display: block;
+      width: 100%;
+  }
+  .table-wrapper:before{
+      // content: "Scroll horizontally >";
+      display: block;
+      text-align: right;
+      font-size: 11px;
+      color: white;
+      padding: 0 0 10px;
+  }
+  .fl-table thead, .fl-table tbody, .fl-table thead th {
+      display: block;
+  }
+  .fl-table thead th:last-child{
+      border-bottom: none;
+  }
+  .fl-table thead {
+      float: left;
+  }
+  .fl-table tbody {
+      width: auto;
+      position: relative;
+      overflow-x: auto;
+  }
+  .fl-table td, .fl-table th {
+      padding: 20px .625em .625em .625em;
+      height: 60px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 120px;
+      font-size: 13px;
+      text-overflow: ellipsis;
+  }
+  .fl-table thead th {
+      text-align: left;
+      border-bottom: 1px solid #f7f7f9;
+  }
+  .fl-table tbody tr {
+      display: table-cell;
+  }
+  .fl-table tbody tr:nth-child(odd) {
+      background: none;
+  }
+  .fl-table tr:nth-child(even) {
+      background: transparent;
+  }
+  .fl-table tr td:nth-child(odd) {
+      background: #F8F8F8;
+      border-right: 1px solid #E6E4E4;
+  }
+  .fl-table tr td:nth-child(even) {
+      border-right: 1px solid #E6E4E4;
+  }
+  .fl-table tbody td {
+      display: block;
+      text-align: center;
+  }
+}
+
+
+.card-container {
+  display: grid;
+  // border: 2px dotted red;
+  grid-template-columns: repeat(3, auto); /* Default for large screens */
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: last baseline;
+
+  /* Responsive breakpoints */
+  @media (max-width: 1024px) { /* For tablets and smaller desktops */
+    grid-template-columns: repeat(2, auto); /* 2 columns */
+  }
+
+  @media (max-width: 768px) { /* For mobile devices */
+    grid-template-columns: 1fr; /* 1 column */
+  }
+}
+
+.user-card {
+  min-width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f8f9fa;
+
+    .username {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 0;
+
+      @media (max-width: 768px) {
+        font-size: 1em;
+      }
+    }
+
+    .status {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      color: #fff;
+
+      &.active {
+        background-color: #28a745;
+      }
+
+      &.inactive {
+        background-color: #dc3545;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 16px;
+
+    p {
+      margin: 8px 0;
+      font-size: 0.95em;
+      color: #333;
+
+      @media (max-width: 768px) {
+        font-size: 0.85em;
+      }
+    }
+
+    .permissions {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 8px 0;
+
+      li {
+        margin: 4px 0;
+        font-size: 0.9em;
+        color: #555;
+
+        @media (max-width: 768px) {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 0.9em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      @media (max-width: 768px) {
+        padding: 6px 12px;
+        font-size: 0.85em;
+      }
+
+      &.edit-btn {
+        background-color: #007bff;
+        color: #fff;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      &.delete-btn {
+        background-color: #dc3545;
+        color: #fff;
+
+        &:hover {
+          background-color: #a71d2a;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .filter-container{
+    display: flex;
+    justify-content: center;
+  }
+  select{
+    width: 50%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  input{
+    width: 50%;
+  }
+
+}
+
+.edit-container{
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  margin-top: -6rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Black shadow with transparency */
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.3); /* Additional box shadow */
+  z-index: 1000; /* Ensures it's above other elements */
+}

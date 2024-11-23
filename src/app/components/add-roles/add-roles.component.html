@@ -1,0 +1,25 @@
+<div class="form-container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Role Name:</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter role name" required="" />
+      </div>
+  
+      <!-- Permissions Section -->
+      <div class="form-group">
+        <label>Permissions:</label>
+        <div formArrayName="permissions">
+          <div *ngFor="let permission of permissions.controls; let i = index" class="permission-item">
+            <input [formControlName]="i" placeholder="Enter permission" required />
+            <button type="button" (click)="removePermission(i)" class="remove-btn">Remove</button>
+          </div>
+        </div>
+        <button type="button" (click)="addPermission()" class="add-btn">Add Permission</button>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+  

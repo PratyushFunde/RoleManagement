@@ -1,0 +1,27 @@
+<div class="form-container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <!-- Name Field -->
+        <div>
+            <label for="name">Name of user:</label>
+            <input id="name" type="text" formControlName="name" required  />
+        </div>
+
+        <!-- Status Field -->
+        <div>
+            <label for="status">Check the checkbox if yout want to keep user active : </label>
+            <input id="status" type="checkbox" formControlName="status" />
+        </div>
+
+        <!-- Role Dropdown -->
+        <div>
+            <label for="role">Role:</label>
+            <select id="role" formControlName="role" required>
+                <option *ngFor="let role of roles" [value]="role.name">{{ role.name
+                    }}</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</div>

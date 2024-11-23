@@ -1,0 +1,140 @@
+/* Form Container */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto; /* Center the form */
+  padding: 20px;
+  background-color: rgb(97, 90, 90); /* Black background */
+  color: white; /* White text */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+}
+
+/* Form Fields */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between fields */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+button {
+  width: 100%; /* Full width for inputs */
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid white; /* White border */
+  border-radius: 5px;
+  // background-color: black; /* Black background */
+  // color: white; /* White text */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: grey; /* Grey border on focus */
+}
+
+/* Permissions Section */
+.permission-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between input and remove button */
+}
+
+.permission-item input {
+  flex-grow: 1; /* Input takes available space */
+}
+
+.remove-btn {
+  margin-top: 2px;
+  // background-color: black; /* Black background */
+  // color: white; /* White text */
+  // border: 2px solid red; /* Red border for remove button */
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: red; /* Red background on hover */
+  color: white; /* White text */
+}
+
+.add-btn {
+  align-self: flex-start; /* Align Add button to the left */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  border: 2px solid white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: grey; /* Grey background on hover */
+  color: black; /* Black text */
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: black; /* Black background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input,
+  button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  label {
+    font-size: 0.8rem;
+  }
+
+  input,
+  button {
+    font-size: 0.8rem;
+  }
+
+  .remove-btn,
+  .add-btn {
+    padding: 5px 10px;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="roles-container">
+  <form #rolesForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <!-- Role Selection Dropdown -->
+    <label for="roleSelect">Select Role:</label>
+    <select id="roleSelect" [(ngModel)]="selectedRole" name="selectedRole"
+      required>
+      <option *ngFor="let role of roles" [ngValue]="role">{{ role.name
+        }}</option>
+    </select>
+
+    <!-- Display Permissions for the selected Role -->
+    <div *ngIf="selectedRole">
+      <h3>Permissions for {{ selectedRole.name }}:</h3>
+
+      <div class="permissions">
+        <div *ngFor="let permission of selectedRole.permissions; let i = index"
+          class="permission-item">
+          <input
+            type="text"
+            [(ngModel)]="selectedRole.permissions[i]"
+            name="permission-{{ i }}"
+            placeholder="Enter permission"
+            required />
+          <button type="button" (click)="removePermission(i)">Remove</button>
+        </div>
+        <div class="add-permission">
+          <input
+            type="text"
+            [(ngModel)]="newPermission"
+            placeholder="Enter new permission" name="permission" />
+          <button type="button" (click)="addPermission()">Add
+            Permission</button>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

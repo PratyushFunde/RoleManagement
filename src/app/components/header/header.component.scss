@@ -1,0 +1,32 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; /* Black background */
+    color: white;           /* White text */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Ensure title text is white */
+  }
+  
+  .links {
+    display: flex;
+    gap: 15px; /* Space between links */
+  }
+  
+  .header-link {
+    color: white;            /* White link text */
+    font-size: 1rem;
+    text-decoration: none;   /* Remove underline */
+    transition: color 0.3s; /* Smooth hover effect */
+  }
+  
+  .header-link:hover {
+    color: grey; /* Light grey on hover */
+  }
+  

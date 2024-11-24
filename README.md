@@ -22,6 +22,8 @@ As authentication is not implemented set read write to true for the database fro
 # Database Url
 Use you database url and replace it in 'proxy.config.json'
 
+# API KEY
+Add you api key at [YOUR_API_KEY] in auth.service.ts
 # CORS
 To handle CORS policies proxy is being used, but you can whitelist your IP from backend or use any other method.
 

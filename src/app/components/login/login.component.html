@@ -1,0 +1,25 @@
+<div class="form">
+    <h2>{{isLogin? 'LOGIN':'SIGN UP'}}</h2>
+    <h3 *ngIf="isLoading">Loading...</h3>
+    <form #login="ngForm" (submit)="onFormSubmit(login)" *ngIf="!isLoading">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email"  name="email" required  ngModel/>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required ngModel
+        />
+      </div>
+      <button class="btn" type="submit">{{isLogin? 'LOGIN':'SIGN UP'}}</button>
+    </form>
+    <p>{{isLogin? 'Do not have an account ?':'Already Have an account ?'}}
+
+        <button class="btn-switch" (click)="modeSwitch()">{{isLogin? 'Sign Up':'Login'}}</button>
+    </p>
+  </div>
+  

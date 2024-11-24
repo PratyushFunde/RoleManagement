@@ -46,7 +46,7 @@ export class AddUserComponent {
 
       this.userService.addUser(this.userForm.value)
       this.userForm.reset();
-      this.router.navigate([''])  
+      this.router.navigate(['/dashboard'])  
     }
 
     else {

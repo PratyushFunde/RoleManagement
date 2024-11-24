@@ -6,6 +6,7 @@ import {  Router,  } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { Role } from '../../models/roles';
+import { ErrorComponent } from "../error/error.component";
 // import { Router } from 'express';
 @Component({
   selector: 'app-user-management',

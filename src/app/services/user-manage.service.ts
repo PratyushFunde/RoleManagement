@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { Role } from '../models/roles';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 
 @Injectable({
@@ -12,6 +13,7 @@ export class UserManageService {
 
 
   http = inject(HttpClient)
+  authService:AuthService=inject(AuthService)
 
   constructor() { this.getRoles() }
 

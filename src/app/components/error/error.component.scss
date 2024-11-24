@@ -1,0 +1,28 @@
+#snackbar {
+    // visibility: hidden;
+    position: absolute;
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right side of the screen */
+    background-color: rgb(215, 105, 105); /* Add background color for visibility */
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    min-width: 10rem;
+    margin-top: 1rem;
+    margin-right: 5rem;
+    border-radius: 7px;
+    transition: all 3s fadein;
+  }
+  
+  
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  

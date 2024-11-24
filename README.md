@@ -82,4 +82,4 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Video
 Below is the video of final output of the project
-"https://drive.google.com/file/d/1jHCts88n2C2jglQkhOEDbor-L3SKJZa8/view?usp=sharing"
+"https://drive.google.com/file/d/1NTMnbQ6ORr18Zz9OxPATbCFTLrLcgyLb/view?usp=sharing"
